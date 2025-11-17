@@ -25,7 +25,8 @@ package MakerAI;
 {$IMAGEBASE $400000}
 {$DEFINE DEBUG}
 {$ENDIF IMPLICITBUILDING}
-{$DESCRIPTION 'OpenAi Gustavo'}
+{$DESCRIPTION 'MakerAI Core Components'}
+{$LIBSUFFIX AUTO}
 {$IMPLICITBUILD ON}
 
 requires
