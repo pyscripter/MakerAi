@@ -699,13 +699,17 @@ Var
 begin
   Result := Destination;
 
-  For I := 0 to Origin.Count - 1 do
-  Begin
-    Name := Origin.Names[I];
-    Value := Origin.Values[Name];
-    Result.Values[Name] := Value;
-  End;
-
+  Result.BeginUpdate;
+  try
+    For I := 0 to Origin.Count - 1 do
+    Begin
+      Name := Origin.Names[I];
+      Value := Origin.Values[Name];
+      Result.Values[Name] := Value;
+    End;
+  finally
+    Result.EndUpdate;
+  end;
 end;
 
 procedure TAiChatConnection.NewChat;
